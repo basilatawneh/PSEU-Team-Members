@@ -6,7 +6,7 @@
     <script src="js/index.js"></script>
 </head>
 
-<body>
+<body onload="displayData( getData() )">
     <div class="header">
         PSEU Team Memebers
     </div>
@@ -15,7 +15,7 @@
             <div class="left-part-header">
                 Add new member
             </div>
-            <form class="form">
+            <form  onsubmit = "addMember ()" class="form">
                 <input type="text" placeholder="Name" required>
                 <input type="text" placeholder="Email" required>
                 <select name="major" required>

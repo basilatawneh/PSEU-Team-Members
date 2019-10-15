@@ -7,15 +7,16 @@ function saveData(data){
 }
 
 function getData(){
-    return window.localStorage.getItem('user');
+    return JSON.parse(window.localStorage.getItem('user'));
 }
 
 function displayData(data){
     let menu = document.getElementsByClassName("right-part-pargraphs")[0];
     
     let res = "";
+    let index = 0;
     data.forEach(function (item) {
-        res = res + "<div class=\"para\">";
+        res = res + "<div id = '" + index + "'class=\"para\">";
         res = res + "<div><img src=\"images/icon.png\" alt=\"icon\" height=\"42\" width=\"42\"></div>";
         res = res + "<div>"
         res = res + "<div class=\"para-name\">";
@@ -29,7 +30,7 @@ function displayData(data){
         res = res + "</div>"
         res = res + "</div>"                   
         res = res + "</div>"
-  
+        index++;
     });
     menu.innerHTML = res;
   }
@@ -45,3 +46,59 @@ function bottomIndex(){
         indexInput.readonly = false;
     }
 }
+
+function getTheTime(){
+    let today = new Date();
+
+    let time = ""//today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    if(today.getHours()<10)
+        time += "0" + today.getHours() + ":";
+    else
+        time += today.getHours() + ":";
+    
+    if(today.getMinutes()<10)
+        time += "0" + today.getMinutes() + ":";
+    else
+        time += today.getMinutes() + ":";
+    
+    if(today.getSeconds()<10)
+        time += "0" + today.getSeconds();
+    else
+        time += today.getSeconds();
+    
+    return time;
+}
+function addMember (){
+    allMembers = getData();
+
+    let name = document.getElementsByTagName("form")[0][0].value;
+    let email = document.getElementsByTagName("form")[0][1].value
+    let major = document.getElementsByTagName("form")[0][2].value
+    let role = document.getElementsByTagName("form")[0][3].value
+    let bio = document.getElementsByTagName("form")[0][4].value
+    let index = document.getElementsByTagName("form")[0][6].value
+    index = parseInt(index);
+    if(index <= 0 || index >allMembers.length +1){
+        alert("your index is incorect pleas chois index between 0 -" + allMembers.length);
+        return ;
+    }
+    
+    for (let item of allMembers){
+        if(item.email == email){
+            alert("your email " +email +" is found please enter another one :)");
+            return ;
+        }
+    }
+    let time = getTheTime();
+    let member = {
+        "name": name,
+        "email": email,
+        "major": major,
+        "bio": bio,
+        "time": time
+    }
+    allMembers.splice( index-1, 0, member);
+    displayData(allMembers)
+    saveData(allMembers)
+  
+  }
