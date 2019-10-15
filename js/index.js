@@ -96,6 +96,7 @@ function addMember (){
         "name": name,
         "email": email,
         "major": major,
+        "role": role,
         "bio": bio,
         "time": time
     }
