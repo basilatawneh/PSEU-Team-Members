@@ -7,30 +7,32 @@ function saveData(data){
 }
 
 function getData(){
-    return JSON.parse(window.localStorage.getItem('user'));
+    allMembers = JSON.parse(window.localStorage.getItem('user'));
+    return allMembers;
 }
 
 function displayData(data){
     let menu = document.getElementsByClassName("right-part-pargraphs")[0];
     
     let res = "";
-    let index = 0;
     data.forEach(function (item) {
-        res = res + "<div id = '" + index + "'class=\"para\">";
+        res = res + "<div onclick = 'showDataOnPopup( this.id)' id = '" + item.email + "'class=\"para\">";
         res = res + "<div><img src=\"images/icon.png\" alt=\"icon\" height=\"42\" width=\"42\"></div>";
         res = res + "<div>"
         res = res + "<div class=\"para-name\">";
         res = res + item.name;
         res = res + "</div>"
         res = res + "<div class=\"para-email-major-role\">"
-        res = res + item.email + " / " + item.major + " / " + item.role;
+        res = res + "<span>" + item.email + "</span> / ";
+        res = res + "<span>" + item.major + "</span> / ";
+        res = res + "<span>" + item.role + "</span> / ";;
         res = res + "</div>"
         res = res + "<div class=\"over\">"
         res = res + item.bio;
         res = res + "</div>"
         res = res + "</div>"                   
         res = res + "</div>"
-        index++;
+  
     });
     menu.innerHTML = res;
   }
@@ -72,11 +74,11 @@ function addMember (){
     allMembers = getData();
 
     let name = document.getElementsByTagName("form")[0][0].value;
-    let email = document.getElementsByTagName("form")[0][1].value
-    let major = document.getElementsByTagName("form")[0][2].value
-    let role = document.getElementsByTagName("form")[0][3].value
-    let bio = document.getElementsByTagName("form")[0][4].value
-    let index = document.getElementsByTagName("form")[0][6].value
+    let email = document.getElementsByTagName("form")[0][1].value;
+    let major = document.getElementsByTagName("form")[0][2].value;
+    let role = document.getElementsByTagName("form")[0][3].value;
+    let bio = document.getElementsByTagName("form")[0][4].value;
+    let index = document.getElementsByTagName("form")[0][6].value;
     index = parseInt(index);
     if(index <= 0 || index >allMembers.length +1){
         alert("your index is incorect pleas chois index between 0 -" + allMembers.length);
@@ -165,4 +167,27 @@ function Filter(){
     res = sortItems(res);
   
     displayData(res);
+}
+
+function showDataOnPopup(id){
+    let name = document.getElementById("popup_name") ;
+    let email = document.getElementById("popup_email") ;
+    let major = document.getElementById("popup_major") ;
+    let role = document.getElementById("popup_role") ;
+    let bio = document.getElementById("popup_bio") ;
+    let index;
+    for(let ind in allMembers ){
+        if(allMembers[ind].email == id){
+            index = ind;
+            break; 
+        }
+    }
+    name.innerHTML = allMembers[index].name;
+    email.value = id;
+    major.value = allMembers[index].major;
+    role.value = allMembers[index].role;
+    bio.value = allMembers[index].bio;
+
+    let popup =document.getElementsByClassName("hidden")[0];
+    popup.style.display = "block"
 }
