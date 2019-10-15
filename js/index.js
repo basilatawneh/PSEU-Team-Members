@@ -9,3 +9,27 @@ function saveData(data){
 function getData(){
     return window.localStorage.getItem('user');
 }
+
+function displayData(data){
+    let menu = document.getElementsByClassName("right-part-pargraphs")[0];
+    
+    let res = "";
+    data.forEach(function (item) {
+        res = res + "<div class=\"para\">";
+        res = res + "<div><img src=\"images/icon.png\" alt=\"icon\" height=\"42\" width=\"42\"></div>";
+        res = res + "<div>"
+        res = res + "<div class=\"para-name\">";
+        res = res + item.name;
+        res = res + "</div>"
+        res = res + "<div class=\"para-email-major-role\">"
+        res = res + item.email + " / " + item.major + " / " + item.role;
+        res = res + "</div>"
+        res = res + "<div class=\"over\">"
+        res = res + item.bio;
+        res = res + "</div>"
+        res = res + "</div>"                   
+        res = res + "</div>"
+  
+    });
+    menu.innerHTML = res;
+  }
