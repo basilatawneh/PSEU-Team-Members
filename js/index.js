@@ -33,3 +33,15 @@ function displayData(data){
     });
     menu.innerHTML = res;
   }
+
+function bottomIndex(){
+    let botttoCheck = document.getElementsByTagName("form")[0][5];
+    let indexInput = document.getElementsByTagName("form")[0][6];
+    if(botttoCheck.checked == true){
+        indexInput.value = allMembers.length;
+        indexInput.readonly = true;
+    }else{
+        indexInput.value = "";
+        indexInput.readonly = false;
+    }
+}
