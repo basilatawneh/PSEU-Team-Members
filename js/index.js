@@ -102,12 +102,12 @@ function addMember (){
     saveData(allMembers)
   
   }
-function FilterMajorRole(){
+function FilterMajorRole(data){
     let major = document.getElementsByName('major_filter')[0];
     let role = document.getElementsByName("role_filter")[0];
     console.log(major.value)
     let filteredData = [];
-    data2.forEach(function (item) {
+    data.forEach(function (item) {
   
       if(major.value != "" && role.value != ""){
           if(item.major == major.value && item.role == role.value)
@@ -148,7 +148,7 @@ function searchByName(data){
     let name = document.getElementById("search-name");
     let ans = [];
     console.log(name.value)
-    if(name.value.length>1){
+    if(name.value.length>0){
       data.forEach(function (item){
         
         if(item.name.indexOf(name.value) != -1)
@@ -157,4 +157,12 @@ function searchByName(data){
       return (ans)
     }else return data;
   
+}
+function Filter(){
+    allMembers = getData();
+    let res = FilterMajorRole(allMembers);
+    res = searchByName(res);
+    res = sortItems(res);
+  
+    displayData(res);
 }
