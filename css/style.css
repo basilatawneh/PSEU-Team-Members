@@ -9,7 +9,7 @@ body, html {
   text-align: center;
   height: 40px;
   font-size: 20px;
-  padding-top: 7px; }
+  padding-top: 10px; }
 
 .left-part {
   position: relative;
@@ -19,31 +19,47 @@ body, html {
   border-radius: 40px;
   overflow: hidden;
   height: 80%;
-  width: 450px;
-  padding: 10px 20px; }
+  width: 480px; }
   .left-part .left-part-header {
     text-align: center;
     font-size: 22px;
     color: #707070;
-    padding: 10px; }
+    padding: 20px; }
 
 .form {
-  height: 500px;
+  height: 700px;
   display: flex;
   flex-direction: column; }
   .form input, .form textarea, .form select {
-    margin: 5px;
+    margin: 5px 10px;
     border-radius: 10px;
     border: solid 1px #C3C3C3;
-    padding: 10px;
-    height: 90px; }
+    padding: 5px;
+    height: 50px;
+    margin: 5px 25px; }
   .form .index {
     display: flex;
-    align-items: center; }
+    align-items: center;
+    margin: 0; }
+    .form .index input {
+      border-radius: 0px; }
   .form .input-index {
     height: 20px; }
 
 select {
   color: #AEAEAE; }
+
+.button {
+  color: white;
+  height: 50px;
+  position: absolute;
+  background-color: #2D89E6;
+  border: none;
+  width: 100%;
+  margin: 0 !important;
+  padding: 0px !important;
+  border-radius: 0px 0px 10px 10px !important;
+  bottom: 0;
+  font-size: 20px; }
 
 /*# sourceMappingURL=style.css.map */
