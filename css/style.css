@@ -1,0 +1,14 @@
+body, html {
+  margin: 0;
+  height: 100%; }
+
+.header {
+  box-sizing: border-box;
+  background-color: #2D89E6;
+  width: 100%;
+  text-align: center;
+  height: 40px;
+  font-size: 20px;
+  padding-top: 7px; }
+
+/*# sourceMappingURL=style.css.map */
