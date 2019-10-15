@@ -102,3 +102,19 @@ function addMember (){
     saveData(allMembers)
   
   }
+
+function sortItems(data){
+    let soryBy = document.getElementsByName("sort")[0] ;
+  
+    if(soryBy.value == 0)
+    data.sort((a,b) => (a.name > b.name ? 1 : -1));
+    else if(soryBy.value == 1)
+    data.sort((a,b) => (a.name < b.name ? 1 : -1));
+    else if(soryBy.value == 2)
+    data.sort((a,b) => (a.time > b.time ? 1 : -1));
+    else if(soryBy.value == 3)
+    data.sort((a,b) => (a.time < b.time ? 1 : -1));
+    console.log(soryBy.value);
+    return data;
+   /// displayData(data2);
+  }
