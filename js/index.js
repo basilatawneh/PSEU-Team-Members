@@ -102,7 +102,33 @@ function addMember (){
     saveData(allMembers)
   
   }
-
+function FilterMajorRole(){
+    let major = document.getElementsByName('major_filter')[0];
+    let role = document.getElementsByName("role_filter")[0];
+    console.log(major.value)
+    let filteredData = [];
+    data2.forEach(function (item) {
+  
+      if(major.value != "" && role.value != ""){
+          if(item.major == major.value && item.role == role.value)
+            filteredData.push(item);  
+      }
+      else if(major.value != ""){
+        if(item.major == major.value)
+          filteredData.push(item);
+        
+      }
+      else if(role.value != ""){
+        if( item.role == role.value)
+          filteredData.push(item);
+        
+      }else 
+      filteredData.push(item);
+    });
+  
+    return filteredData;
+    
+  }
 function sortItems(data){
     let soryBy = document.getElementsByName("sort")[0] ;
   
