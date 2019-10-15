@@ -1,6 +1,6 @@
 
 let allMembers = [];
-
+let index;
 
 function saveData(data){
     window.localStorage.setItem('user', JSON.stringify(data));
@@ -169,20 +169,23 @@ function Filter(){
   
     displayData(res);
 }
-
+function findTheElement(data,aim){
+    let index = -1;
+    for(let ind in data ){
+        if(data[ind].email == aim){
+            index = ind;
+            break; 
+        }
+    }
+    return index;
+}
 function showDataOnPopup(id){
     let name = document.getElementById("popup_name") ;
     let email = document.getElementById("popup_email") ;
     let major = document.getElementById("popup_major") ;
     let role = document.getElementById("popup_role") ;
     let bio = document.getElementById("popup_bio") ;
-    let index;
-    for(let ind in allMembers ){
-        if(allMembers[ind].email == id){
-            index = ind;
-            break; 
-        }
-    }
+    index =findTheElement(allMembers,id);
     name.innerHTML = allMembers[index].name;
     email.value = id;
     major.value = allMembers[index].major;
@@ -191,4 +194,34 @@ function showDataOnPopup(id){
 
     let popup =document.getElementsByClassName("hidden")[0];
     popup.style.display = "block"
+}
+function closePopup(){
+    let popup =document.getElementsByClassName("hidden")[0];
+    popup.style.display = "none"
+}
+function deletitem(){
+    let email = document.getElementById("popup_email") ;
+    allMembers.splice(index,1);
+    saveData(allMembers);
+    getData();
+    displayData(allMembers);
+    closePopup();
+}
+function edit(){
+    let email = document.getElementById("popup_email") ;
+    let major = document.getElementById("popup_major") ;
+    let role = document.getElementById("popup_role") ;
+    let bio = document.getElementById("popup_bio") ;
+    let index =findTheElement(allMembers,email.value);
+
+
+    allMembers[index].email = email.value;
+    allMembers[index].major = major.value;
+    allMembers[index].role = role.value;
+    allMembers[index].bio = bio.value;
+    saveData(allMembers);
+    getData();
+    displayData(allMembers);
+    closePopup();
+
 }
