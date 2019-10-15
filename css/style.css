@@ -11,6 +11,12 @@ body, html {
   font-size: 20px;
   padding-top: 10px; }
 
+.page {
+  display: flex;
+  position: relative;
+  height: calc(100% - 40px);
+  overflow: hidden; }
+
 .left-part {
   position: relative;
   margin: 20px 20px 0px 20px;
@@ -61,5 +67,48 @@ select {
   border-radius: 0px 0px 10px 10px !important;
   bottom: 0;
   font-size: 20px; }
+
+.right-part {
+  width: 60%;
+  margin-right: 100px;
+  background-color: #F6F6F6;
+  height: 100%; }
+
+.right-part-pargraphs {
+  max-width: 100%;
+  max-height: 100%;
+  overflow: scroll; }
+
+.users {
+  display: flex;
+  flex-direction: column; }
+
+.para {
+  display: flex;
+  margin-top: 50px; }
+  .para img {
+    padding: 10px; }
+  .para .para-name {
+    font-size: 20px; }
+  .para .para-email-major-role {
+    color: #2D89E6; }
+
+.over {
+  height: 40px;
+  overflow: hidden; }
+
+.hidden {
+  position: absolute;
+  top: 0;
+  background-color: red;
+  width: 100%;
+  height: 100%;
+  display: none; }
+
+.select-border {
+  border-left: 2px solid white;
+  border-right: 2px solid white;
+  margin: 0px 10px;
+  padding: 0px 10px; }
 
 /*# sourceMappingURL=style.css.map */
