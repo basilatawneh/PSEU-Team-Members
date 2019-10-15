@@ -128,7 +128,7 @@ function FilterMajorRole(){
   
     return filteredData;
     
-  }
+}
 function sortItems(data){
     let soryBy = document.getElementsByName("sort")[0] ;
   
@@ -143,4 +143,18 @@ function sortItems(data){
     console.log(soryBy.value);
     return data;
    /// displayData(data2);
-  }
+}
+function searchByName(data){
+    let name = document.getElementById("search-name");
+    let ans = [];
+    console.log(name.value)
+    if(name.value.length>1){
+      data.forEach(function (item){
+        
+        if(item.name.indexOf(name.value) != -1)
+        ans.push(item);
+      });
+      return (ans)
+    }else return data;
+  
+}
