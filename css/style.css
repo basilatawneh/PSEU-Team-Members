@@ -143,4 +143,57 @@ select {
     width: 150px;
     padding: 2px; }
 
+.popup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  border-radius: 30px;
+  padding: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  align-items: center;
+  border: 1px solid;
+  z-index: 0;
+  background-color: white;
+  width: 50%;
+  height: 550px; }
+  .popup .popup-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; }
+    .popup .popup-content .name {
+      font-size: 78px; }
+    .popup .popup-content .email-major-role {
+      padding: 20px 0px;
+      font-size: 14px; }
+    .popup .popup-content span {
+      color: blue;
+      padding: 0px 10px;
+      font-size: 25px; }
+  .popup .buttons {
+    margin-top: 20px;
+    display: flex;
+    bottom: 0px; }
+    .popup .buttons button {
+      color: white;
+      font-size: 20px;
+      margin: 20px;
+      width: 150px;
+      height: 50px; }
+    .popup .buttons .delete {
+      background-color: #FF4A4A;
+      border: none; }
+    .popup .buttons .save {
+      background-color: #2D89E6;
+      border: none; }
+    .popup .buttons .cancel {
+      background-color: #707070;
+      border: none; }
+  .popup select, .popup input {
+    color: #2D89E6; }
+
 /*# sourceMappingURL=style.css.map */

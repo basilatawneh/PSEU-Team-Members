@@ -174,3 +174,71 @@ select{
                 
     }
 }
+.popup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    border-radius: 30px; 
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    border: 1px solid ;
+    z-index: 0;
+    //display: none;
+    background-color:white;
+    width: 50%;
+    height: 550px;
+
+   .popup-content{
+       .name{
+           font-size: 78px;
+       }
+       .email-major-role{
+           padding: 20px 0px;
+           font-size:  14px;
+       }
+       span{
+           color:blue;
+           padding: 0px 10px;
+           font-size:25px;
+       }
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       flex-direction: column;
+   }
+   .buttons{
+       margin-top:20px; 
+       
+       
+       display: flex;
+       bottom: 0px;
+       button{
+           color: white;
+           font-size: 20px;
+           margin: 20px;
+           width: 150px;
+           height: 50px;
+           
+       }
+        .delete{
+               background-color:#FF4A4A ;
+               border: none;
+        }
+        .save{
+            background-color:#2D89E6 ;
+            border: none;
+        }
+        .cancel{
+        background-color:#707070 ;
+        border: none;
+        }  
+   }
+   select,input{
+       color:#2D89E6;
+   } 
+}
