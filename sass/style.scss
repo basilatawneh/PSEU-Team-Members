@@ -28,3 +28,29 @@ body,html{
     }
     padding: 10px 20px;
 }
+.form  {
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    input, textarea, select {
+        //box-sizing: border-box;
+        margin: 5px;
+        border-radius: 10px ;
+        border: solid 1px #C3C3C3;
+        padding: 10px;
+        height: 90px;
+        
+    }
+    .index {
+        display: flex;
+        align-items: center;
+    }
+    .input-index{
+        height: 20px;
+    }
+}
+select{
+   
+    color:#AEAEAE;
+
+}

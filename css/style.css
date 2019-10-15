@@ -27,4 +27,23 @@ body, html {
     color: #707070;
     padding: 10px; }
 
+.form {
+  height: 500px;
+  display: flex;
+  flex-direction: column; }
+  .form input, .form textarea, .form select {
+    margin: 5px;
+    border-radius: 10px;
+    border: solid 1px #C3C3C3;
+    padding: 10px;
+    height: 90px; }
+  .form .index {
+    display: flex;
+    align-items: center; }
+  .form .input-index {
+    height: 20px; }
+
+select {
+  color: #AEAEAE; }
+
 /*# sourceMappingURL=style.css.map */

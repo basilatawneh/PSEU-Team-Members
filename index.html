@@ -1,41 +1,48 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link href = "css/style.css" rel = "stylesheet" type = "text/css">
-        <script src = "js/index.js"></script>
-    </head>
-    <body>
-        <div class="header">
-            PSEU Team Memebers
-        </div>
+
+<head>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script src="js/index.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        PSEU Team Memebers
+    </div>
+    <div class="page">
         <div class="left-part">
-            <div class = "left-part-header">
+            <div class="left-part-header">
                 Add new member
             </div>
             <form class="form">
                 <input type="text" placeholder="Name" required>
                 <input type="text" placeholder="Email" required>
-                <select name = "major"  required>
-                    <option value=""  disabled selected>major</option>
+                <select name="major" required>
+                    <option value="" disabled selected>major</option>
                     <option value="Computer Science">Computer Science </option>
                     <option value="Computer Engineering">Computer Engineering</option>
                     <option value="Information Technology">Information Technology </option>
                     <option value="Information System">Information System </option>
                 </select>
-                <select  class = "role" required>
-                    <option value=""  disabled selected>Role</option>
+                <select class="role" required>
+                    <option value="" disabled selected>Role</option>
                     <option value="Front-End Developer">Front-End Developer</option>
                     <option value="Back-End Developer">Back-End Developer</option>
                     <option value="Full-Stack Developer">Full-Stack Developer </option>
                     <option value="UI/UX Designer">UI/UX Designer </option>
                 </select>
-                <textarea required rows = "5" cols = "40" minlength = "5" maxlength="7"   placeholder="Describe yourself here..."></textarea>
-                <div class = "index">
-                    <input type="checkbox" required> Add to bottom / or at index <input class = "input-index" type="number" required>
+                <textarea required rows="5" cols="40" minlength="5" maxlength="7"
+                    placeholder="Describe yourself here..."></textarea>
+                <div class="index">
+                    <input type="checkbox" required> Add to bottom / or at index <input class="input-index"
+                        type="number" required>
                 </div>
-                <input class = "button" type = "submit" value="save">
+                <input class="button" type="submit" value="save">
             </form>
-        
+
         </div>
-    </body>
+    </div>
+</body>
+
 </html>
