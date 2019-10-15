@@ -15,7 +15,8 @@ body, html {
   display: flex;
   position: relative;
   height: calc(100% - 40px);
-  overflow: hidden; }
+  overflow: hidden;
+  justify-content: flex-end; }
 
 .left-part {
   position: relative;
@@ -77,7 +78,7 @@ select {
 .right-part-pargraphs {
   max-width: 100%;
   max-height: 100%;
-  overflow: scroll; }
+  overflow-y: auto; }
 
 .users {
   display: flex;
@@ -116,7 +117,7 @@ select {
   font-size: 20px;
   display: flex;
   justify-content: space-between;
-  margin-top: 30px;
+  margin-top: 60px;
   margin-bottom: 20px; }
   .right-part-header span {
     margin-right: 10px; }
