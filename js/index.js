@@ -1,5 +1,6 @@
 
 let allMembers = [];
+
 let index;
 
 function saveData(data){
@@ -219,11 +220,24 @@ function edit(){
     let bio = document.getElementById("popup_bio") ;
     //index =findTheElement(allMembers,email.value);
 
-
+    let newIndex = findTheElement(allMembers,email.value);
+    if(newIndex != -1 && newIndex != index){
+        alert("your email " +email.value +" is found please enter another one :)");
+        return ;
+    }
+    if(bio.value.length < 500) {
+        alert("The bio size short please add more content :)");
+        return ;
+    }
+    if(bio.value.length > 1500) {
+        alert("The bio size larg please remove more content :)");
+        return ;
+    }
     allMembers[index].email = email.value;
     allMembers[index].major = major.value;
     allMembers[index].role = role.value;
     allMembers[index].bio = bio.value;
+
     saveData(allMembers);
     getData();
     displayData(allMembers);
