@@ -13,7 +13,7 @@ function getData(){
 
 function displayData(data){
     let menu = document.getElementsByClassName("right-part-pargraphs")[0];
-    
+    let items = document.getElementsByClassName('right-header-part-right')[0];
     let res = "";
     data.forEach(function (item) {
         res = res + "<div onclick = 'showDataOnPopup( this.id)' id = '" + item.email + "'class=\"para\">";
@@ -34,6 +34,11 @@ function displayData(data){
         res = res + "</div>"
   
     });
+    items.innerHTML = data.length;
+    if(data.length>1)
+        items.innerHTML += " items"
+    else
+        items.innerHTML += " items"
     menu.innerHTML = res;
   }
 
