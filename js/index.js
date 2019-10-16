@@ -114,7 +114,7 @@ function addMember (){
 function FilterMajorRole(data){
     let major = document.getElementsByName('major_filter')[0];
     let role = document.getElementsByName("role_filter")[0];
-    console.log(major.value)
+   
     let filteredData = [];
     data.forEach(function (item) {
   
@@ -149,14 +149,13 @@ function sortItems(data){
     data.sort((a,b) => (a.time > b.time ? 1 : -1));
     else if(soryBy.value == 3)
     data.sort((a,b) => (a.time < b.time ? 1 : -1));
-    console.log(soryBy.value);
     return data;
    /// displayData(data2);
 }
 function searchByName(data){
     let name = document.getElementById("search-name");
     let ans = [];
-    console.log(name.value)
+    
     if(name.value.length>0){
       data.forEach(function (item){
         
