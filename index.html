@@ -50,7 +50,7 @@
                     <span>Sort by</span>
 
                     <select onchange="Filter()" name="sort" placeholder="major" required>
-                        <option value="" disabled selected>Role</option>
+                        <option value="" >default</option>
                         <option value="0">a-z</option>
                         <option value="1">z-a</option>
                         <option value="2">near</option>
@@ -58,14 +58,14 @@
                     </select>
                     <div onchange="Filter()" class="select-border">
                         <select name="major_filter" onchange="Filter()" required>
-                            <option value="" disabled selected>major</option>
+                            <option value=""  >major (default)</option>
                             <option value="Computer Science">Computer Science </option>
                             <option value="Computer Engineering">Computer Engineering</option>
                             <option value="Information Technology">Information Technology </option>
                             <option value="Information System">Information System </option>
                         </select>
                         <select onchange="Filter()" name="role_filter" required>
-                            <option value="" disabled selected>Role</option>
+                            <option value=""  >Role (default)</option>
                             <option value="Front-End Developer">Front-End Developer</option>
                             <option value="Back-End Developer">Back-End Developer</option>
                             <option value="Full-Stack Developer">Full-Stack Developer </option>
