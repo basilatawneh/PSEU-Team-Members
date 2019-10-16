@@ -217,7 +217,7 @@ function edit(){
     let major = document.getElementById("popup_major") ;
     let role = document.getElementById("popup_role") ;
     let bio = document.getElementById("popup_bio") ;
-    let index =findTheElement(allMembers,email.value);
+    //index =findTheElement(allMembers,email.value);
 
 
     allMembers[index].email = email.value;

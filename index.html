@@ -4,6 +4,8 @@
 <head>
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <script src="js/index.js"></script>
+    meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body onload="displayData( getData() )">
@@ -32,7 +34,7 @@
                     <option value="Full-Stack Developer">Full-Stack Developer </option>
                     <option value="UI/UX Designer">UI/UX Designer </option>
                 </select>
-                <textarea required  minlength="5" maxlength="7" placeholder="Biography"></textarea>
+                <textarea required  minlength="500" maxlength="1500" placeholder="Biography"></textarea>
                 <div class="index">
                     <input onclick = "bottomIndex ()" type="checkbox" >
                     <span>Add to bottom / or at index </span>
@@ -127,6 +129,9 @@
     </div>
     <div class="hidden">
     <div class="popup">
+        <div onclick = "closePopup ()" class = "icon-X">
+                <!-- <i class="fa fa-close"></i> -->
+        </div>
         <div class="popup-content">
                 <div id = "popup_name" class="name">
                         fadi
